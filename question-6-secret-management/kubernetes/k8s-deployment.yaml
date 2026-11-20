@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enterprise-app-secure
+  namespace: default
+  labels:
+    app: enterprise-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: enterprise-app
+  template:
+    metadata:
+      labels:
+        app: enterprise-app
+    spec:
+      containers:
+        - name: app
+          image: python:3.11-slim
+          command: ["python", "-m", "http.server", "8080"]
+          ports:
+            - containerPort: 8080
+          # Safe Secret Injection via Environment Variables
+          env:
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: enterprise-app-secrets
+                  key: database-password
+            - name: API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: enterprise-app-secrets
+                  key: api-key
+          # Safe Secret Injection via Read-Only Volume Mount
+          volumeMounts:
+            - name: secret-volume
+              mountPath: "/etc/secrets"
+              readOnly: true
+      volumes:
+        - name: secret-volume
+          secret:
+            secretName: enterprise-app-secrets
+            defaultMode: 0400  # Strict read-only file permissions

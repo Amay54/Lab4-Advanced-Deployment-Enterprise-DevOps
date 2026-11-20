@@ -18,8 +18,8 @@ Each question is structured into a dedicated folder containing executable code, 
 | **Question 2** | **Automated Testing Within CI/CD Pipeline** (GitHub Actions, Pytest) | 5 | **Completed & Verified** |
 | **Question 3** | **Blue-Green Deployment Strategy** (Zero Downtime, Traffic Switch) | 5 | **Completed & Verified** |
 | **Question 4** | **GitOps-Based Delivery** (Argo CD, Declarative Sync) | 5 | **Completed & Verified** |
-| **Question 5** | **Advanced Deployment Strategies Comprehensive Report** | 10 | *Folder Structured & Prepared* |
-| **Question 6** | **Secret Management for Pipeline and Deployments** (Vault, K8s) | 5 | *Folder Structured & Prepared* |
+| **Question 5** | **Advanced Deployment Strategies Comprehensive Report** | 10 | **Completed & Verified** |
+| **Question 6** | **Secret Management for Pipeline and Deployments** (Vault, K8s) | 5 | **Completed & Verified** |
 | **Question 7** | **Canary Deployment Strategy** (Traffic Splitting, Rollback Triggers) | 5 | *Folder Structured & Prepared* |
 
 ---
@@ -85,6 +85,17 @@ python question-3-blue-green/scripts/demonstrate_blue_green.py
 python question-4-gitops/scripts/validate_gitops.py
 ```
 *Result: Validates Kubernetes Deployment, Service, and Kustomize manifests and Argo CD Application CRD bound to this GitHub repository. Simulates cluster synchronization, drift self-healing, and Git-driven updates.*
+
+### Question 5: Advanced Deployment Strategies Report
+*Complete 10-mark technical comparative report, architecture diagrams, risk analysis, and comparative matrix located at:*
+- `question-5-deployment-report/README.md`
+- `question-5-deployment-report/report-source/advanced_deployment_strategies_report.md`
+
+### Question 6: Secret Management for Pipeline and Deployments
+```bash
+python question-6-secret-management/scripts/verify_secrets.py
+```
+*Result: Validates Kubernetes Secret and Deployment manifests, tests runtime credential masking, and executes a repository-wide leak scan verifying 0 committed secrets.*
 
 ---
 
