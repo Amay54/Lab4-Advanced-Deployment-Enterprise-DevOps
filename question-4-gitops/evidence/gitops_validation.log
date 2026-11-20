@@ -1,0 +1,5 @@
+GitOps Validation Log - 2026-11-20T10:45:25.835600+00:00
+Source Repo: https://github.com/Amay54/Lab4-Advanced-Deployment-Enterprise-DevOps.git
+Manifests: deployment.yaml, service.yaml, kustomization.yaml, application.yaml
+Validation: All YAML manifests syntactically valid and compliant with K8s and Argo CD CRD specifications.
+Self-Healing: Tested & Verified (Drift detected -> Automatic reconciliation -> Status SYNCED/HEALTHY).

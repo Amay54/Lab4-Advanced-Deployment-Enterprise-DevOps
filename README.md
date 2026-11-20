@@ -16,8 +16,8 @@ Each question is structured into a dedicated folder containing executable code, 
 | :--- | :--- | :--- | :--- |
 | **Question 1** | **Disaster Recovery Mechanism** (Backup, Restore, RTO & RPO) | 5 | **Completed & Verified** |
 | **Question 2** | **Automated Testing Within CI/CD Pipeline** (GitHub Actions, Pytest) | 5 | **Completed & Verified** |
-| **Question 3** | **Blue-Green Deployment Strategy** (Zero Downtime, Traffic Switch) | 5 | *Folder Structured & Prepared* |
-| **Question 4** | **GitOps-Based Delivery** (Argo CD, Declarative Sync) | 5 | *Folder Structured & Prepared* |
+| **Question 3** | **Blue-Green Deployment Strategy** (Zero Downtime, Traffic Switch) | 5 | **Completed & Verified** |
+| **Question 4** | **GitOps-Based Delivery** (Argo CD, Declarative Sync) | 5 | **Completed & Verified** |
 | **Question 5** | **Advanced Deployment Strategies Comprehensive Report** | 10 | *Folder Structured & Prepared* |
 | **Question 6** | **Secret Management for Pipeline and Deployments** (Vault, K8s) | 5 | *Folder Structured & Prepared* |
 | **Question 7** | **Canary Deployment Strategy** (Traffic Splitting, Rollback Triggers) | 5 | *Folder Structured & Prepared* |
@@ -73,6 +73,18 @@ python question-1-disaster-recovery/scripts/disaster_simulation.py
 python question-2-automated-testing/run_tests.py
 ```
 *Result: Runs 9 Pytest unit and integration tests. All 9 pass. The CI gate verifies that tests must pass before the deployment step proceeds in GitHub Actions.*
+
+### Question 3: Blue-Green Deployment
+```bash
+python question-3-blue-green/scripts/demonstrate_blue_green.py
+```
+*Result: Runs Blue (8081) and Green (8082) versions and an active reverse proxy router (8000). Demonstrates live cutover from Blue to Green and instant rollback with 100% availability (0 dropped requests).*
+
+### Question 4: GitOps-Based Delivery
+```bash
+python question-4-gitops/scripts/validate_gitops.py
+```
+*Result: Validates Kubernetes Deployment, Service, and Kustomize manifests and Argo CD Application CRD bound to this GitHub repository. Simulates cluster synchronization, drift self-healing, and Git-driven updates.*
 
 ---
 

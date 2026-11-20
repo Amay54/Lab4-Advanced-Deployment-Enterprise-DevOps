@@ -1,0 +1,7 @@
+FROM python:3.11-slim
+WORKDIR /app
+RUN pip install --no-cache-dir flask
+COPY app_green.py .
+EXPOSE 8082
+ENV PORT=8082
+CMD ["python", "app_green.py"]

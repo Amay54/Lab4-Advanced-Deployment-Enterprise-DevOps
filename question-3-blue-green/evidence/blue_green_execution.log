@@ -1,0 +1,22 @@
+Total Requests: 18
+Successful Requests: 18
+Failed Requests: 0
+Availability: 100%
+Req 01: Status=200 Env=Blue Version=1.0.0
+Req 02: Status=200 Env=Blue Version=1.0.0
+Req 03: Status=200 Env=Blue Version=1.0.0
+Req 04: Status=200 Env=Blue Version=1.0.0
+Req 05: Status=200 Env=Blue Version=1.0.0
+Req 06: Status=200 Env=Green Version=2.0.0
+Req 07: Status=200 Env=Green Version=2.0.0
+Req 08: Status=200 Env=Green Version=2.0.0
+Req 09: Status=200 Env=Green Version=2.0.0
+Req 10: Status=200 Env=Green Version=2.0.0
+Req 11: Status=200 Env=Green Version=2.0.0
+Req 12: Status=200 Env=Green Version=2.0.0
+Req 13: Status=200 Env=Blue Version=1.0.0
+Req 14: Status=200 Env=Blue Version=1.0.0
+Req 15: Status=200 Env=Blue Version=1.0.0
+Req 16: Status=200 Env=Blue Version=1.0.0
+Req 17: Status=200 Env=Blue Version=1.0.0
+Req 18: Status=200 Env=Blue Version=1.0.0

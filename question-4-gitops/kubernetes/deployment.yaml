@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enterprise-app
+  namespace: default
+  labels:
+    app: enterprise-app
+    app.kubernetes.io/managed-by: argocd
+    environment: production
+spec:
+  replicas: 2
+  revisionHistoryLimit: 5
+  selector:
+    matchLabels:
+      app: enterprise-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: enterprise-app
+        environment: production
+    spec:
+      containers:
+        - name: web-service
+          image: python:3.11-slim
+          command: ["python", "-m", "http.server", "8080"]
+          ports:
+            - containerPort: 8080
+              name: http
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
+          livenessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 5
