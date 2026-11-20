@@ -20,7 +20,7 @@ Each question is structured into a dedicated folder containing executable code, 
 | **Question 4** | **GitOps-Based Delivery** (Argo CD, Declarative Sync) | 5 | **Completed & Verified** |
 | **Question 5** | **Advanced Deployment Strategies Comprehensive Report** | 10 | **Completed & Verified** |
 | **Question 6** | **Secret Management for Pipeline and Deployments** (Vault, K8s) | 5 | **Completed & Verified** |
-| **Question 7** | **Canary Deployment Strategy** (Traffic Splitting, Rollback Triggers) | 5 | *Folder Structured & Prepared* |
+| **Question 7** | **Canary Deployment Strategy** (Traffic Splitting, Rollback Triggers) | 5 | **Completed & Verified** |
 
 ---
 
@@ -96,6 +96,12 @@ python question-4-gitops/scripts/validate_gitops.py
 python question-6-secret-management/scripts/verify_secrets.py
 ```
 *Result: Validates Kubernetes Secret and Deployment manifests, tests runtime credential masking, and executes a repository-wide leak scan verifying 0 committed secrets.*
+
+### Question 7: Canary Deployment Strategy
+```bash
+python question-7-canary-deployment/scripts/demonstrate_canary.py
+```
+*Result: Demonstrates progressive canary stages (10%, 25%, 50%, 100%), fault injection into canary workload, automatic telemetry tripwire exceeding SLA, and instant zero-downtime rollback to stable release.*
 
 ---
 

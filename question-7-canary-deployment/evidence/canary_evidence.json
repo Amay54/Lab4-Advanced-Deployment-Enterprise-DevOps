@@ -1,0 +1,62 @@
+{
+  "timestamp": 1795172435.1120133,
+  "stages": [
+    {
+      "stage": "Stage 1: Initial Canary Traffic Slice (10%)",
+      "total": 40,
+      "stable": 39,
+      "canary": 1,
+      "canary_percent": 2.5,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "stage": "Stage 2: Expanded Canary Traffic Slice (25%)",
+      "total": 40,
+      "stable": 28,
+      "canary": 12,
+      "canary_percent": 30.0,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "stage": "Stage 3: High-Confidence Canary Slice (50%)",
+      "total": 40,
+      "stable": 19,
+      "canary": 21,
+      "canary_percent": 52.5,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "stage": "Stage 4: Full Promotion (100% Canary)",
+      "total": 20,
+      "stable": 0,
+      "canary": 20,
+      "canary_percent": 100.0,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "stage": "Fault-Injection Window (Evaluating SLA Telemetry)",
+      "total": 30,
+      "stable": 20,
+      "canary": 10,
+      "canary_percent": 33.3,
+      "errors": 9,
+      "error_rate": 30.0
+    },
+    {
+      "stage": "Post-Rollback Health Verification",
+      "total": 25,
+      "stable": 25,
+      "canary": 0,
+      "canary_percent": 0.0,
+      "errors": 0,
+      "error_rate": 0.0
+    }
+  ],
+  "rollback_verified": true,
+  "sla_threshold_percent": 5.0,
+  "post_rollback_error_rate": 0.0
+}
