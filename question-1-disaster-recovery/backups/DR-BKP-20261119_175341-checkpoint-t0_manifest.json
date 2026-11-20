@@ -1,0 +1,16 @@
+{
+  "backup_id": "DR-BKP-20261119_175341-checkpoint-t0",
+  "timestamp_utc": "2026-11-19T17:53:41.680613+00:00",
+  "archive_file": "DR-BKP-20261119_175341-checkpoint-t0.tar.gz",
+  "archive_size_bytes": 3449,
+  "sha256_checksum": "9e9e0b13ba7d12dfc939589b8432b0eb5b3dba7549cd5f463e506e549ffd85e8",
+  "duration_seconds": 0.025,
+  "database_stats": {
+    "tables": {
+      "customers": 100,
+      "financial_ledgers": 100
+    },
+    "total_records": 200
+  },
+  "status": "COMPLETED_VERIFIED"
+}

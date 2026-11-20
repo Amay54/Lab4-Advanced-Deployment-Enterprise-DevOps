@@ -1,0 +1,24 @@
+C:\Users\amayy\AppData\Local\Programs\Python\Python313\Lib\site-packages\pytest_asyncio\plugin.py:299: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the "fixture" caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to "function" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+============================= test session starts =============================
+platform win32 -- Python 3.13.5, pytest-8.3.4, pluggy-1.6.0 -- C:\Users\amayy\AppData\Local\Programs\Python\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\amayy
+plugins: anyio-4.9.0, langsmith-0.10.10, asyncio-1.4.0, cov-6.0.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 9 items
+
+..\..\..\..\.gemini\antigravity\scratch\Lab4-Advanced-Deployment-Enterprise-DevOps\question-2-automated-testing\tests\test_integration.py::test_full_order_lifecycle_integration PASSED [ 11%]
+..\..\..\..\.gemini\antigravity\scratch\Lab4-Advanced-Deployment-Enterprise-DevOps\question-2-automated-testing\tests\test_integration.py::test_metrics_telemetry_integration PASSED [ 22%]
+..\..\..\..\.gemini\antigravity\scratch\Lab4-Advanced-Deployment-Enterprise-DevOps\question-2-automated-testing\tests\test_unit.py::test_health_endpoint PASSED [ 33%]
+..\..\..\..\.gemini\antigravity\scratch\Lab4-Advanced-Deployment-Enterprise-DevOps\question-2-automated-testing\tests\test_unit.py::test_index_endpoint PASSED [ 44%]
+..\..\..\..\.gemini\antigravity\scratch\Lab4-Advanced-Deployment-Enterprise-DevOps\question-2-automated-testing\tests\test_unit.py::test_version_endpoint PASSED [ 55%]
+..\..\..\..\.gemini\antigravity\scratch\Lab4-Advanced-Deployment-Enterprise-DevOps\question-2-automated-testing\tests\test_unit.py::test_order_validation_missing_body PASSED [ 66%]
+..\..\..\..\.gemini\antigravity\scratch\Lab4-Advanced-Deployment-Enterprise-DevOps\question-2-automated-testing\tests\test_unit.py::test_order_validation_missing_customer PASSED [ 77%]
+..\..\..\..\.gemini\antigravity\scratch\Lab4-Advanced-Deployment-Enterprise-DevOps\question-2-automated-testing\tests\test_unit.py::test_order_validation_invalid_pricing PASSED [ 88%]
+..\..\..\..\.gemini\antigravity\scratch\Lab4-Advanced-Deployment-Enterprise-DevOps\question-2-automated-testing\tests\test_unit.py::test_secret_masking PASSED [100%]
+
+- generated xml file: C:\Users\amayy\.gemini\antigravity\scratch\Lab4-Advanced-Deployment-Enterprise-DevOps\question-2-automated-testing\reports\test-report.xml -
+============================== 9 passed in 0.30s ==============================

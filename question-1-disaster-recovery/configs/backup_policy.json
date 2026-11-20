@@ -1,0 +1,25 @@
+{
+  "policy_name": "Enterprise_Gold_DR_Policy",
+  "version": "1.0",
+  "backup_frequency": "Every 4 Hours",
+  "retention_count": 5,
+  "compression_algorithm": "gzip",
+  "checksum_algorithm": "SHA-256",
+  "storage_target": "backups/",
+  "encryption_enabled": true,
+  "rto_target_seconds": 60,
+  "rpo_target_seconds": 300,
+  "databases": [
+    {
+      "name": "enterprise_db",
+      "type": "postgresql",
+      "host": "localhost",
+      "port": 5433,
+      "user": "dr_admin"
+    }
+  ],
+  "application_state": {
+    "data_path": "/var/lib/app_data",
+    "critical_files": ["orders.db", "audit.log"]
+  }
+}

@@ -1,0 +1,59 @@
+name: CI/CD Pipeline - Automated Testing & Deployment Gate
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  test-suite:
+    name: Run Automated Tests (Unit & Integration)
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check out Repository Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python Environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Application and Testing Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r question-2-automated-testing/app/requirements.txt
+          pip install pytest pytest-cov
+
+      - name: Execute Automated Unit & Integration Tests (Quality Gate)
+        run: |
+          echo "Running Automated Tests within CI/CD Pipeline..."
+          python -m pytest question-2-automated-testing/tests -v --junitxml=question-2-automated-testing/reports/test-report.xml
+
+      - name: Upload Test Report Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-report
+          path: question-2-automated-testing/reports/test-report.xml
+
+  deploy-gate:
+    name: Pipeline Deployment Gate
+    needs: [test-suite]
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Validate Quality Gate Status
+        run: |
+          echo "======================================================="
+          echo " QUALITY GATE CLEARED: All automated tests have passed!"
+          echo " Proceeding with automated artifact build & deployment."
+          echo "======================================================="
+
+      - name: Simulated Production Deployment Step
+        run: |
+          echo "Deploying application to target staging/production environment..."
+          echo "Deployment successful: version 1.0.0"

@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  dr-postgres-primary:
+    image: postgres:15-alpine
+    container_name: dr-postgres-primary
+    environment:
+      POSTGRES_DB: enterprise_db
+      POSTGRES_USER: dr_admin
+      POSTGRES_PASSWORD: SecureDRPassword2026!
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_primary_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dr_admin -d enterprise_db"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+
+  dr-postgres-standby:
+    image: postgres:15-alpine
+    container_name: dr-postgres-standby
+    environment:
+      POSTGRES_DB: enterprise_db
+      POSTGRES_USER: dr_admin
+      POSTGRES_PASSWORD: SecureDRPassword2026!
+    ports:
+      - "5434:5432"
+    volumes:
+      - pg_standby_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dr_admin -d enterprise_db"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  pg_primary_data:
+  pg_standby_data:
